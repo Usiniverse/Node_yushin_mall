@@ -8,8 +8,8 @@ const requestMiddleware = require("./middleware/request-log-middleware");
 // ===============================
 // DB 연결
 connectDB();
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error:"));
 
 // Server Application
 const app = express();

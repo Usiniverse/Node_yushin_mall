@@ -24,7 +24,7 @@ const goodsSchema = mongoose.Schema({
 
 module.exports = mongoose.model("Goods", goodsSchema);
 
-goodsSchema.virtual('goodsId').get(function () {
+goodsSchema.virtual('userId').get(function () {
     return this._id.toHexString();
 });
 goodsSchema.set('toJSON', {
