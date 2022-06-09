@@ -2,6 +2,8 @@
 const express = require("express");
 const connectDB = require("./database/db");
 const goodsRouter = require("./router/goods");
+// const cartRouter = require("./router/cart");
+const userRouter = require("./router/user");
 const port = 3000;
 const requestMiddleware = require("./middleware/request-log-middleware");
 
@@ -22,7 +24,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(requestMiddleware);
 
 // Router
-app.use("/api", [goodsRouter]);
+app.use("/goods", goodsRouter);
+app.use("/", userRouter);
+// app.use("/cart", cartRouter);s
 
 // ssr 엔진
 app.set('view engine', 'ejs'); // ejs 사용을 위해 view engine 에 ejs set

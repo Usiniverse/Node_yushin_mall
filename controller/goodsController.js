@@ -8,7 +8,8 @@ const articleDB = require("../models/blog");
 async function articleList(req, res) {
     const articles = await articleDB.getArticleList();
     res.status(200).json(articles);
-}
+};
+
 
 // writeArticle
 async function writeArticle(req, res) {
@@ -22,7 +23,8 @@ async function writeArticle(req, res) {
     });
     // res.json({ article: postArticle });
     res.status(201).json({ result: 'success', msg: '글이 등록되었습니다.' });
-}
+};
+
 
 // getArticle
 async function getArticle(req, res) {
@@ -69,10 +71,7 @@ async function getArticle(req, res) {
         article: articleInfo,
         commentsInfo: commentsInfo,
     });
-}
-
-
-
+};
 
 module.exports.articleList = articleList;
 module.exports.getArticle = getArticle;

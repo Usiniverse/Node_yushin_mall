@@ -8,6 +8,7 @@ const router = express.Router();
 // *** 회원가입 API.
 router.post('/signup', async (req, res) => {
     const { userName, password, confirmPassword } = req.body;
+    console.log(req.body);
 
     if (password !== confirmPassword) {
         res.status(400).send({ errorMessage: '비밀번호와 비밀번호 확인의 내용이 일치하지 않습니다.', });
